@@ -2,8 +2,6 @@
 Configurações do projeto
 """
 
-
-import os 
 from pathlib import Path
 
 # Path raiz do projeto
