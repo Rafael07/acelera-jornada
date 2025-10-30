@@ -54,39 +54,6 @@ id,nome,area,salario,bonus_percentual
 
 ---
 
-## Dicas para Resolver
-
-* **Leitura de CSV**: `csv.DictReader`
-* **Laços e condições**: `for`, `while`, `if/elif/else`
-* **Conversão de tipos**: `int()`, `float()`
-* **Tratamento de erros**: `try/except`
-* **Manipulação de strings**: `.strip()`, `.isdigit()`
-* **Ordenação**: `sorted()` para encontrar top 3 bônus
-* **Exportação de arquivos**:
-
-  * CSV: `csv.DictWriter`
-  * JSON: `json.dump()`
-
----
-
-## Extra (Opcional)
-
-Se quiser, você pode resolver parte do desafio com **pandas**:
-
-```python
-import pandas as pd
-
-df = pd.read_csv("funcionarios.csv")
-
-# cálculo direto
-df["bonus_final"] = 1000 + df["salario"] * df["bonus_percentual"]
-
-# agregações
-media_por_area = df.groupby("area")["salario"].mean()
-```
-
----
-
 ## Critérios de Avaliação
 
 * ✅ Validação correta das regras
@@ -94,3 +61,26 @@ media_por_area = df.groupby("area")["salario"].mean()
 * ✅ Clareza e organização do código
 * ✅ Uso de boas práticas de Python (tratamento de erros, laços, condições)
 * ⭐ Bônus: uso de bibliotecas como **pandas** para simplificar etapas
+
+---
+
+## Fluxo de Processamento
+```mermaid
+flowchart TD
+    A["Ler conjunto de dados de funcionários"]
+    B["Validar dados"]
+    D{Dados válidos?}
+    C["Calcular KPIs"]
+    E["Gerar relatório individual de funcionários"]
+    F["Gerar relatório de registros inválidos"]
+    G["Gerar relatório de KPIs e métricas agregadas"]
+
+    A --> B
+    B --> D
+    D -- Sim --> C
+    D -- Não --> F
+    C --> E
+    C --> G
+```
+
+---
