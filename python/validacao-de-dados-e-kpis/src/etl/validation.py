@@ -1,4 +1,5 @@
 from typing import Any, Dict, List
+import extract
 
 area_atuacao: List[str] = ['Vendas', 'TI', 'Financeiro', 'RH', 'Operações']
 
@@ -70,12 +71,12 @@ def bonus_validation(employee: Dict[str, Any], errors: List[Dict[str, Any]]) -> 
         })
 
 def consolidate_validation(employee_list: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    errors: List[Dict[str, Any]] =[]
+    # consolidação de todas as validações
+    errors: List[Dict[str, Any]] = []
     for employee in employee_list:
         name_validation(employee, errors)
         area_validation(employee, errors)
         salario_validation(employee, errors)
         bonus_validation(employee, errors)
     return errors
-
         
