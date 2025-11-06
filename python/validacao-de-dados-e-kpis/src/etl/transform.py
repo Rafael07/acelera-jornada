@@ -3,6 +3,11 @@ from typing import Any, Dict, List
 
 BONUS_BASE: int = 1000
 
+def filter_valid_data(data: List[Dict[str, Any]], errors: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    error_ids = {err["employee_id"] for err in errors}
+    valid_data = [row for row in data if row["id"] not in error_ids]
+    return valid_data
+
 def calcular_bonus(df: pd.DataFrame) -> pd.DataFrame:
     df['bonus'] = BONUS_BASE + (df['salario'].astype(float) * df['bonus_percentual'].astype(float))
     return df
@@ -23,8 +28,10 @@ def mostrar_top3_funcionario_com_bonus(df: pd.DataFrame) -> pd.DataFrame:
     df.sort_values(by='bonus', ascending=False).head(3)
     return df
 
-def run_KPIs(employee_list: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
-    df = pd.DataFrame(employee_list)
+def run_KPIs(employee_list: List[Dict[str, Any]], errors: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
+    valid_data = filter_valid_data(employee_list, errors)
+    
+    df = pd.DataFrame(valid_data)
 
     df_com_bonus = calcular_bonus(df)
     funcionarios_por_area = quantidade_de_funcionarios_por_area(df_com_bonus)
