@@ -1,0 +1,61 @@
+{
+    "funcionarios_por_area": [
+        {
+            "area": "Operações",
+            "quantidade_funcionarios": 1
+        },
+        {
+            "area": "TI",
+            "quantidade_funcionarios": 2
+        },
+        {
+            "area": "Vendas",
+            "quantidade_funcionarios": 2
+        }
+    ],
+    "media_salarial_por_area": [
+        {
+            "area": "Operações",
+            "media_salarial": 5100.0
+        },
+        {
+            "area": "TI",
+            "media_salarial": 6550.0
+        },
+        {
+            "area": "Vendas",
+            "media_salarial": 4650.0
+        }
+    ],
+    "bonus_total": [
+        {
+            "bonus_total": 7276.0
+        }
+    ],
+    "top3_bonus": [
+        {
+            "id": 9,
+            "nome": "Maria Alves",
+            "area": "TI",
+            "salario": 6100,
+            "bonus_percentual": 0.12,
+            "bonus": 1732.0
+        },
+        {
+            "id": 1,
+            "nome": "Ana Souza",
+            "area": "Vendas",
+            "salario": 4500,
+            "bonus_percentual": 0.1,
+            "bonus": 1450.0
+        },
+        {
+            "id": 10,
+            "nome": "Pedro Santos",
+            "area": "Operações",
+            "salario": 5100,
+            "bonus_percentual": 0.08,
+            "bonus": 1408.0
+        }
+    ]
+}
