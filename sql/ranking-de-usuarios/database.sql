@@ -1,11 +1,11 @@
-CREATE TABLE IF NOT EXISTS interactions (
+CREATE TABLE IF NOT EXISTS google_gmail_emails (
     id INTEGER PRIMARY KEY,
     from_user TEXT,
     to_user TEXT,
     day INTEGER
 );
 
-INSERT INTO interactions (id, from_user, to_user, day)
+INSERT INTO google_gmail_emails (id, from_user, to_user, day)
 VALUES
     (1, 'ana', 'bruno', 1),
     (2, 'ana', 'carlos', 1),
