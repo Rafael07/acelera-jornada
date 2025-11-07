@@ -14,3 +14,10 @@ PATHS = {
     'SRC_DIR': PROJECT_ROOT/'src',
     'REPORTS_DIR': PROJECT_ROOT/'reports'
 }
+
+# Dicin=ario de relatórios do projeto
+REPORTS = {
+    'INDIVIDUAL': PATHS['REPORTS_DIR']/'relatorio_individual.csv',
+    'ERROS': PATHS['REPORTS_DIR']/'erros.csv',
+    'KPIS': PATHS['REPORTS_DIR']/'kpis.json'
+}

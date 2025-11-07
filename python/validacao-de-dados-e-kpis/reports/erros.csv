@@ -1,0 +1,6 @@
+employee_id,campo,valor,erro
+3,salario,0,"O campo ""salario"" deve ser maior que zero."
+4,nome,Daniel 9,"O campo ""nome"" não deve conter nenhum número."
+5,nome,,"O campo ""nome"" é obrigatório."
+6,bonus_percentual,-0.05,"O campo ""bonus_percentual"" deve estar entre 0 e 1."
+8,bonus_percentual,abc,"O campo ""bonus_percentual"" deve ser um número."
